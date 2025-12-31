@@ -58,19 +58,18 @@
                     humanChoice == "paper" && computerChoice == "rock"
                 ) {
                     alert('Human player wins!');
-                    return humanScore + 1;
+                    return humanScore++;
                 } else if (
                     computerChoice == "rock" && humanChoice == "scissors" ||
                     computerChoice == "scissors" && humanChoice == "paper" ||
                     computerChoice == "paper" && humanChoice == "rock"
                 ) {
                     alert('Computer player wins!');
-                    return computerScore + 1;
+                    return computerScore++;
                 } else if (
                     humanChoice === computerChoice
                 ) {
                     alert("It's a Tie!")
-                    return humanScore + computerScore + 0;
                 }
             }
 

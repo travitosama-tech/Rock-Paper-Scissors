@@ -8,7 +8,7 @@
     <body>
         <script>
             function getComputerChoice() {
-                const randomNumber = Math.floor(Math.random() * 3);
+                const randomNumber = Math.floor(Math.random() * 3); // Generates a random integer (0, 1, or 2)
             
                 let result;
                 switch (randomNumber) {
@@ -22,11 +22,10 @@
                         result = "scissors";
                         break;
                 }
-                return result;
+                return result; // Returns the generated choice
             }
         
-            console.log(getComputerChoice());
-
+            console.log(getComputerChoice()); // checking if result is accurate
 
         </script>
     </body>

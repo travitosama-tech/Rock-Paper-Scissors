@@ -28,25 +28,23 @@
 
 
             function getHumanChoice() {
-                const userInput = prompt("Choose Rock, Paper, or Scissors", "")
-                const normalizedInput = userInput.toLowerCase();
-                let result;
-                switch (normalizedInput) {
-                    case "Rock":
-                        result == "rock";
-                        break;
-                    case "Paper": 
-                        result == "paper";
-                        break;
-                    case "Scissors": 
-                        result == "scissors";
-                        break;
-                }
-                return result;
+                let userInput = prompt("Choose Rock, Paper, or Scissors:", )
+                let result = userInput.toLowerCase();
+                switch (result) {
+                    case "rock":
+                        console.log("Human chose: rock")
+                        return "rock";
+                    case "paper": 
+                        console.log("Human chose: paper")
+                        return "paper";
+                    case "scissors": 
+                        console.log("Human chose: scissors")
+                        return "scissors";
+                }}
 
-            }
+            console.log(getHumanChoice());
 
-            getHumanChoice();
+
 
 
         </script>

@@ -24,8 +24,30 @@
                 }
                 return result; // Returns the generated choice
             }
-        
             console.log(getComputerChoice()); // checking if result is accurate
+
+
+            function getHumanChoice() {
+                const userInput = prompt("Choose Rock, Paper, or Scissors", "")
+                const normalizedInput = userInput.toLowerCase();
+                let result;
+                switch (normalizedInput) {
+                    case "Rock":
+                        result == "rock";
+                        break;
+                    case "Paper": 
+                        result == "paper";
+                        break;
+                    case "Scissors": 
+                        result == "scissors";
+                        break;
+                }
+                return result;
+
+            }
+
+            getHumanChoice();
+
 
         </script>
     </body>

@@ -28,9 +28,9 @@
 
 
             function getHumanChoice() {
-                let userInput = prompt("Choose Rock, Paper, or Scissors:", )
-                let result = userInput.toLowerCase();
-                switch (result) {
+                let userInput = prompt("Choose Rock, Paper, or Scissors:", ) // Prompting the user for input
+                let result = userInput.toLowerCase(); // Convert input to lowercase to make the switch statement case-insensitive
+                switch (result) {                       // Used a switch statement to authorize and return a standard choice
                     case "rock":
                         console.log("Human chose: rock")
                         return "rock";
@@ -44,6 +44,37 @@
 
             console.log(getHumanChoice());
 
+            let humanScore = 0;
+
+            let computerScore = 0;
+
+            function playRound(humanChoice, computerChoice) {
+                if (
+                    humanChoice == "rock" && computerChoice == "scissors" ||
+                    humanChoice == "scissors" && computerChoice == "paper" ||
+                    humanChoice == "paper" && computerChoice == "rock"
+                ) {
+                    alert('Human player wins!');
+                    return humanScore + 1;
+                } else if (
+                    computerChoice == "rock" && humanChoice == "scissors" ||
+                    computerChoice == "scissors" && humanChoice == "paper" ||
+                    computerChoice == "paper" && humanChoice == "rock"
+                ) {
+                    alert('Computer player wins!');
+                    return computerScore + 1;
+                } else if (
+                    humanChoice === computerChoice
+                ) {
+                    alert("It's a Tie!")
+                    return humanScore + computerScore + 0;
+                }
+            }
+
+            const humanSelection = getHumanChoice();
+            const computerSelection = getComputerChoice();
+
+            playRound(humanSelection, computerSelection);
 
 
 

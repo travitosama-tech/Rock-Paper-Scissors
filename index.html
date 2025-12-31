@@ -14,17 +14,20 @@
                 switch (randomNumber) {
                     case 0:
                         result = "rock";
+                        console.log("Computer chose: rock")
                         break;
                     case 1: 
                         result = "paper";
+                        console.log("Computer chose: paper")
                         break;
                     case 2: 
                         result = "scissors";
+                        console.log("Computer chose: scissors")
                         break;
                 }
                 return result; // Returns the generated choice
             }
-            console.log(getComputerChoice()); // checking if result is accurate
+             
 
 
             function getHumanChoice() {
@@ -42,7 +45,7 @@
                         return "scissors";
                 }}
 
-            console.log(getHumanChoice());
+            
 
             let humanScore = 0;
 
@@ -75,6 +78,9 @@
             const computerSelection = getComputerChoice();
 
             playRound(humanSelection, computerSelection);
+
+            console.log(humanScore);
+            console.log(computerScore);
 
 
 

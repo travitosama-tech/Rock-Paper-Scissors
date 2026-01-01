@@ -11,7 +11,7 @@
                 const randomNumber = Math.floor(Math.random() * 3); // Generates a random integer (0, 1, or 2)
             
                 let result;
-                switch (randomNumber) {
+                switch (randomNumber) {  // used switch statements to convert the random integers to rock paper or scissors.
                     case 0:
                         result = "rock";
                         console.log("Computer chose: rock")
@@ -77,14 +77,14 @@
                 computerScore = 0;
 
                 for (let i = 0; i < 5; i++) {                   // created a for loop to have play game function call play round 5 times. 
-                    const humanChoice = getHumanChoice();       // made a function call to each variable.
-                    const computerChoice = getComputerChoice();
+                    const humanChoice = getHumanChoice();       // made a function call to each variable in order to funnel each choice function into playRound and loop it 5 times.
+                    const computerChoice = getComputerChoice(); //
                     playRound(humanChoice, computerChoice);
                     console.log(humanScore);                    // both human and computer scores are logged per round.
                     console.log(computerScore);
                 } 
 
-                if (humanScore > computerScore) {
+                if (humanScore > computerScore) {                // conditionals assigned in order to determine victor.
                     return "Player wins the game!";
                 } else if (computerScore > humanScore) {
                     return "Computer wins the game!";

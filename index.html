@@ -48,7 +48,6 @@
             
 
             let humanScore = 0;
-
             let computerScore = 0;
 
             function playRound(humanChoice, computerChoice) {
@@ -73,15 +72,33 @@
                 }
             }
 
-            const humanSelection = getHumanChoice();
-            const computerSelection = getComputerChoice();
+            function playGame() {
+                humanScore = 0;
+                computerScore = 0;
 
-            playRound(humanSelection, computerSelection);
+                for (let i = 0; i < 5; i++) {                   // created a for loop to have play game function call play round 5 times. 
+                    const humanChoice = getHumanChoice();
+                    const computerChoice = getComputerChoice();
+                    playRound(humanChoice, computerChoice);
+                    console.log(humanScore);                    // both human and computer scores are logged per round.
+                    console.log(computerScore);
+                } 
 
-            console.log(humanScore);
-            console.log(computerScore);
+                if (humanScore > computerScore) {
+                    return "Player wins the game!";
+                } else if (computerScore > humanScore) {
+                    return "Computer wins the game!";
+                } else {
+                    return "It's a tie!";
+                }
+                    
+            }
+           
+            console.log(playGame());
 
 
+
+            
 
         </script>
     </body>

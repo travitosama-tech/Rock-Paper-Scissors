@@ -47,10 +47,10 @@
 
             
 
-            let humanScore = 0;
+            let humanScore = 0;                                         // initializing starting scores to 0.
             let computerScore = 0;
 
-            function playRound(humanChoice, computerChoice) {
+            function playRound(humanChoice, computerChoice) {                       // using if else statements for the conditionals and rulings per choice.
                 if (
                     humanChoice == "rock" && computerChoice == "scissors" ||
                     humanChoice == "scissors" && computerChoice == "paper" ||
@@ -77,7 +77,7 @@
                 computerScore = 0;
 
                 for (let i = 0; i < 5; i++) {                   // created a for loop to have play game function call play round 5 times. 
-                    const humanChoice = getHumanChoice();
+                    const humanChoice = getHumanChoice();       // made a function call to each variable.
                     const computerChoice = getComputerChoice();
                     playRound(humanChoice, computerChoice);
                     console.log(humanScore);                    // both human and computer scores are logged per round.

@@ -6,6 +6,11 @@
         <title>Rock-Paper-Scissors</title>
     </head>
     <body>
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+        <div id="results">Results</div>
+
         <script>
             function getComputerChoice() {
                 const randomNumber = Math.floor(Math.random() * 3); // Generates a random integer (0, 1, or 2)
@@ -31,8 +36,7 @@
 
 
             function getHumanChoice() {
-                let userInput = prompt("Choose Rock, Paper, or Scissors:", ) // Prompting the user for input
-                let result = userInput.toLowerCase(); // Convert input to lowercase to make the switch statement case-insensitive
+                let result = choice()                                
                 switch (result) {                       // Used a switch statement to authorize and return a standard choice
                     case "rock":
                         console.log("Human chose: rock")
@@ -96,7 +100,26 @@
            
             console.log(playGame());
 
+            function choice() {
+                const rockChoice = document.querySelector("rock");
+                btn.addEventlistener('click', (event) => {
+                let result = 'rock'
+                });
 
+                const paperChoice = document.querySelector("paper");
+                btn.addEventlistener('click', (event) => {
+                let result = 'paper'
+                });
+                
+                const scissorsChoice = document.querySelector("scissors");
+                btn.addEventlistener('click', (event) => {
+                let result = 'scissors'
+                });
+ 
+        };
+
+
+            
 
             
 

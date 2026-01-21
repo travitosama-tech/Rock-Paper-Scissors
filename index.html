@@ -32,22 +32,28 @@
                 }
                 return result; // Returns the generated choice
             }
-             
-
-
+            
             function getHumanChoice() {
-                let result = choice()                                
-                switch (result) {                       // Used a switch statement to authorize and return a standard choice
-                    case "rock":
-                        console.log("Human chose: rock")
-                        return "rock";
-                    case "paper": 
-                        console.log("Human chose: paper")
-                        return "paper";
-                    case "scissors": 
-                        console.log("Human chose: scissors")
-                        return "scissors";
-                }}
+                // return the last human selection (or null if none)
+                return currentHumanChoice;
+            }
+
+
+            // store the current human selection
+            let currentHumanChoice = null;
+
+            // choice(selection) is called when a human clicks a button
+            function choice(selection) {
+                currentHumanChoice = selection;
+                console.log(`Human chose: ${selection}`);
+                // Immediately play a round when the human clicks a choice
+                playRound(getHumanChoice(), getComputerChoice());
+            }
+
+                        // attach event listeners to choice buttons
+            document.getElementById('rock').addEventListener('click', () => choice('rock'));
+            document.getElementById('paper').addEventListener('click', () => choice('paper'));
+            document.getElementById('scissors').addEventListener('click', () => choice('scissors'));
 
             
 
@@ -76,6 +82,8 @@
                 }
             }
 
+        
+
             function playGame() {
                 humanScore = 0;
                 computerScore = 0;
@@ -97,26 +105,14 @@
                 }
                     
             }
-           
-            console.log(playGame());
+            
+            const result = document.querySelector("#results");
+            
+            const computerScoreResult = document.createElement("p");
+            const humanScoreResult = document.createElement("p");
+            
 
-            function choice() {
-                const rockChoice = document.querySelector("rock");
-                btn.addEventlistener('click', (event) => {
-                let result = 'rock'
-                });
-
-                const paperChoice = document.querySelector("paper");
-                btn.addEventlistener('click', (event) => {
-                let result = 'paper'
-                });
-                
-                const scissorsChoice = document.querySelector("scissors");
-                btn.addEventlistener('click', (event) => {
-                let result = 'scissors'
-                });
- 
-        };
+            
 
 
             

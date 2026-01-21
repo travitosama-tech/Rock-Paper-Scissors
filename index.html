@@ -88,33 +88,25 @@
             function scoreUpdate() {
                 const results = document.querySelector("#results");
                 results.textContent = `Human score: ${humanScore} | Computer score: ${computerScore}`;
+                announceWinner();
             }
 
-
-
-
-
-            function playGame() {
-                humanScore = 0;
-                computerScore = 0;
-
-                for (let i = 0; i < 5; i++) {                   // created a for loop to have play game function call play round 5 times. 
-                    const humanChoice = getHumanChoice();       // made a function call to each variable in order to funnel each choice function into playRound and loop it 5 times.
-                    const computerChoice = getComputerChoice(); //
-                    playRound(humanChoice, computerChoice);
-                    console.log(humanScore);                    // both human and computer scores are logged per round.
-                    console.log(computerScore);
-                } 
-
-                if (humanScore > computerScore) {                // conditionals assigned in order to determine victor.
-                    return "Player wins the game!";
-                } else if (computerScore > humanScore) {
-                    return "Computer wins the game!";
-                } else {
-                    return "It's a tie!";
+            function announceWinner() {
+                const results = document.querySelector("#results");
+                if (humanScore == 5) {
+                    const humanWinner = document.createElement("p");
+                    humanWinner.textContent = "Human Player Wins!";
+                    results.appendChild(humanWinner);
+                } else if (computerScore == 5) {
+                    const computerWinner = document.createElement("p");
+                    computerWinner.textContent = "Computer Player Wins!";
+                    results.appendChild(computerWinner);
                 }
-                    
             }
+
+
+
+
             
         
 

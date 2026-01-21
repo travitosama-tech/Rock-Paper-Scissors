@@ -67,22 +67,32 @@
                     humanChoice == "paper" && computerChoice == "rock"
                 ) {
                     alert('Human player wins!');
-                    return humanScore++;
+                    humanScore++;
+                    scoreUpdate();
                 } else if (
                     computerChoice == "rock" && humanChoice == "scissors" ||
                     computerChoice == "scissors" && humanChoice == "paper" ||
                     computerChoice == "paper" && humanChoice == "rock"
                 ) {
                     alert('Computer player wins!');
-                    return computerScore++;
+                    computerScore++;
+                    scoreUpdate();
                 } else if (
                     humanChoice === computerChoice
                 ) {
                     alert("It's a Tie!")
+                    scoreUpdate();
                 }
             }
 
-        
+            function scoreUpdate() {
+                const results = document.querySelector("#results");
+                results.textContent = `Human score: ${humanScore} | Computer score: ${computerScore}`;
+            }
+
+
+
+
 
             function playGame() {
                 humanScore = 0;
